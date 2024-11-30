@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Operator Table</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="center">
+    <table>
+        <tr>
+            <th>NE</th>
+            <th>Address</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>GSM</th>
+            <th>UMTS</th>
+            <th>LTE</th>
+            <th>Status</th>
+        </tr>
+        {% for operator in operators %}
+        <tr>
+            <td>{{ operator.ne }}</td>
+            <td>{{ operator.address }}</td>
+            <td>{{ operator.latitude }}</td>
+            <td>{{ operator.longitude }}</td>
+            <td>{{ operator.gsm }}</td>
+            <td>{{ operator.umts }}</td>
+            <td>{{ operator.lte }}</td>
+            <td>{{ operator.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
